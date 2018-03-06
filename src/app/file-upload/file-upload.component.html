@@ -1,0 +1,37 @@
+<div class="PopBox" id="div1">
+    <div class="filesView">File Uploading is in Progress
+        <span><img class="downArrow" src="../assets/images/down-arrow-black.png"/></span>
+        <span><img class="crossChecklist" src="../assets/images/cross-checklist.png"/></span>
+     </div>
+    <div class="insidePop" *ngFor="let item of finalArr;let i =index;">
+         <div class="Uploading">
+            <p class="pdfName">{{item.filename}}</p>
+            <p class="progressBar progressBarContent" [style.width.%]="item.percentage">
+            <p class="status">{{item.status}}</p>
+         </div>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- <img class="smallCross" src="../assets/images/close.png" data-toggle="modal" data-target="#myModal" /> Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cancel Uploading</h4>
+      </div>
+      <div class="modal-body">
+        <p>You still have file(s) uploading. Are you sure you want to cancel?</p>
+      </div>
+      <br>
+      <div class="moveCenter" style="margin-left:80px;">
+        <button type="button" class="uploadOK btnMargin" data-dismiss="modal"><span class="continueText">Continue Uploading</span></button>&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="cancelUpload">Cancel Uploading</span></button>
+      </div>
+    <br>
+    </div>
+
+  </div>
+</div>
